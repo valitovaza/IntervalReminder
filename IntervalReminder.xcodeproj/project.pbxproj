@@ -1,0 +1,616 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5603969A1E5E08F600F457FD /* StatusBarManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560396991E5E08F600F457FD /* StatusBarManagerTests.swift */; };
+		5603969C1E5E160400F457FD /* StatusBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5603969B1E5E160400F457FD /* StatusBarManager.swift */; };
+		5629C5AD1E619F8A00B694D1 /* NSImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5629C5AC1E619F8A00B694D1 /* NSImage+.swift */; };
+		563CA1FB1E5417AC006A9291 /* IntervalRepeaterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563CA1FA1E5417AC006A9291 /* IntervalRepeaterTests.swift */; };
+		563CA1FE1E541825006A9291 /* IntervalRepeater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563CA1FD1E541825006A9291 /* IntervalRepeater.swift */; };
+		56529D481E6920F80059B666 /* IntervalTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56529D471E6920F80059B666 /* IntervalTableView.swift */; };
+		56529D4A1E69258F0059B666 /* IntervalTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56529D491E69258F0059B666 /* IntervalTableViewTests.swift */; };
+		566EC9F41E5DE8FD00702A2B /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566EC9F31E5DE8FD00702A2B /* AppDelegateTests.swift */; };
+		566EC9F61E5DE9BC00702A2B /* AppConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566EC9F51E5DE9BC00702A2B /* AppConfiguratorTests.swift */; };
+		566EC9F81E5DEA1E00702A2B /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566EC9F71E5DEA1E00702A2B /* Configurator.swift */; };
+		56789B8E1E61C95100083F1F /* RepeaterEventListenerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56789B8D1E61C95100083F1F /* RepeaterEventListenerTests.swift */; };
+		56789B901E61C98700083F1F /* RepeaterEventListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56789B8F1E61C98700083F1F /* RepeaterEventListener.swift */; };
+		56789B921E61EC0300083F1F /* ImageGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56789B911E61EC0300083F1F /* ImageGeneratorTests.swift */; };
+		56789B941E61EC3600083F1F /* ImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56789B931E61EC3600083F1F /* ImageGenerator.swift */; };
+		567BEEBC1E66A04F00C23190 /* ModalControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567BEEBB1E66A04F00C23190 /* ModalControllerTests.swift */; };
+		56A27D341E6512110001D863 /* IntervalsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A27D331E6512110001D863 /* IntervalsViewControllerTests.swift */; };
+		56A27D361E6514820001D863 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A27D351E6514820001D863 /* ViewControllerFactory.swift */; };
+		56A27D381E6515610001D863 /* ViewControllerFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A27D371E6515610001D863 /* ViewControllerFactoryTests.swift */; };
+		56A27D3A1E653D4B0001D863 /* IntervalPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A27D391E653D4B0001D863 /* IntervalPresenterTests.swift */; };
+		56A27D3C1E653DB30001D863 /* IntervalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A27D3B1E653DB30001D863 /* IntervalPresenter.swift */; };
+		56A27D3E1E6546940001D863 /* IntervalInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A27D3D1E6546940001D863 /* IntervalInteractorTests.swift */; };
+		56A27D401E6546BF0001D863 /* IntervalInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A27D3F1E6546BF0001D863 /* IntervalInteractor.swift */; };
+		56A27D421E654CAF0001D863 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A27D411E654CAF0001D863 /* Extensions.swift */; };
+		56C33F651E668DDC0019463A /* ModalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C33F631E668DDC0019463A /* ModalController.swift */; };
+		56C33F661E668DDC0019463A /* ModalController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56C33F641E668DDC0019463A /* ModalController.xib */; };
+		56D42CB71E6D2B6200658B48 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D42CB61E6D2B6200658B48 /* Common.swift */; };
+		56E5D0AF1E52BDF10038B262 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E5D0AE1E52BDF10038B262 /* AppDelegate.swift */; };
+		56E5D0B11E52BDF10038B262 /* IntervalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E5D0B01E52BDF10038B262 /* IntervalsViewController.swift */; };
+		56E5D0B31E52BDF10038B262 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56E5D0B21E52BDF10038B262 /* Assets.xcassets */; };
+		56E5D0B61E52BDF10038B262 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56E5D0B41E52BDF10038B262 /* Main.storyboard */; };
+		56E5D0CF1E52C75E0038B262 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E5D0CE1E52C75E0038B262 /* Interval.swift */; };
+		56E5D0D21E52CCC50038B262 /* IntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E5D0D11E52CCC50038B262 /* IntervalTests.swift */; };
+		56E5D0D41E52CD2B0038B262 /* IntervalContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E5D0D31E52CD2B0038B262 /* IntervalContainerTests.swift */; };
+		56E5D0D61E52CE940038B262 /* IntervalContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E5D0D51E52CE940038B262 /* IntervalContainer.swift */; };
+		56EB60751E6E6CFC0051A9A5 /* NotificationPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EB60741E6E6CFC0051A9A5 /* NotificationPresenterTests.swift */; };
+		56EB60771E6E6D420051A9A5 /* NotificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EB60761E6E6D420051A9A5 /* NotificationPresenter.swift */; };
+		56EF3F4E1E56D40A0099876E /* IntervalTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EF3F4D1E56D40A0099876E /* IntervalTimerTests.swift */; };
+		56EF3F501E56D44D0099876E /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EF3F4F1E56D44D0099876E /* IntervalTimer.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		56E5D0BD1E52BDF10038B262 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56E5D0A31E52BDF10038B262 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56E5D0AA1E52BDF10038B262;
+			remoteInfo = IntervalReminder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		560396991E5E08F600F457FD /* StatusBarManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarManagerTests.swift; sourceTree = "<group>"; };
+		5603969B1E5E160400F457FD /* StatusBarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarManager.swift; sourceTree = "<group>"; };
+		5629C5AC1E619F8A00B694D1 /* NSImage+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSImage+.swift"; sourceTree = "<group>"; };
+		563CA1FA1E5417AC006A9291 /* IntervalRepeaterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalRepeaterTests.swift; sourceTree = "<group>"; };
+		563CA1FD1E541825006A9291 /* IntervalRepeater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalRepeater.swift; sourceTree = "<group>"; };
+		56529D471E6920F80059B666 /* IntervalTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalTableView.swift; sourceTree = "<group>"; };
+		56529D491E69258F0059B666 /* IntervalTableViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalTableViewTests.swift; sourceTree = "<group>"; };
+		566EC9F31E5DE8FD00702A2B /* AppDelegateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateTests.swift; sourceTree = "<group>"; };
+		566EC9F51E5DE9BC00702A2B /* AppConfiguratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguratorTests.swift; sourceTree = "<group>"; };
+		566EC9F71E5DEA1E00702A2B /* Configurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
+		56789B8D1E61C95100083F1F /* RepeaterEventListenerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeaterEventListenerTests.swift; sourceTree = "<group>"; };
+		56789B8F1E61C98700083F1F /* RepeaterEventListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeaterEventListener.swift; sourceTree = "<group>"; };
+		56789B911E61EC0300083F1F /* ImageGeneratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageGeneratorTests.swift; sourceTree = "<group>"; };
+		56789B931E61EC3600083F1F /* ImageGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageGenerator.swift; sourceTree = "<group>"; };
+		567BEEBB1E66A04F00C23190 /* ModalControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalControllerTests.swift; sourceTree = "<group>"; };
+		56A27D331E6512110001D863 /* IntervalsViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalsViewControllerTests.swift; sourceTree = "<group>"; };
+		56A27D351E6514820001D863 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		56A27D371E6515610001D863 /* ViewControllerFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFactoryTests.swift; sourceTree = "<group>"; };
+		56A27D391E653D4B0001D863 /* IntervalPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalPresenterTests.swift; sourceTree = "<group>"; };
+		56A27D3B1E653DB30001D863 /* IntervalPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalPresenter.swift; sourceTree = "<group>"; };
+		56A27D3D1E6546940001D863 /* IntervalInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalInteractorTests.swift; sourceTree = "<group>"; };
+		56A27D3F1E6546BF0001D863 /* IntervalInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalInteractor.swift; sourceTree = "<group>"; };
+		56A27D411E654CAF0001D863 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		56C33F631E668DDC0019463A /* ModalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalController.swift; sourceTree = "<group>"; };
+		56C33F641E668DDC0019463A /* ModalController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModalController.xib; sourceTree = "<group>"; };
+		56D42CB61E6D2B6200658B48 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		56E5D0AB1E52BDF10038B262 /* IntervalReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntervalReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		56E5D0AE1E52BDF10038B262 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		56E5D0B01E52BDF10038B262 /* IntervalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalsViewController.swift; sourceTree = "<group>"; };
+		56E5D0B21E52BDF10038B262 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		56E5D0B51E52BDF10038B262 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		56E5D0B71E52BDF10038B262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56E5D0BC1E52BDF10038B262 /* IntervalReminderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntervalReminderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		56E5D0C21E52BDF10038B262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56E5D0CE1E52C75E0038B262 /* Interval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interval.swift; sourceTree = "<group>"; };
+		56E5D0D11E52CCC50038B262 /* IntervalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalTests.swift; sourceTree = "<group>"; };
+		56E5D0D31E52CD2B0038B262 /* IntervalContainerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalContainerTests.swift; sourceTree = "<group>"; };
+		56E5D0D51E52CE940038B262 /* IntervalContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalContainer.swift; sourceTree = "<group>"; };
+		56EB60741E6E6CFC0051A9A5 /* NotificationPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationPresenterTests.swift; sourceTree = "<group>"; };
+		56EB60761E6E6D420051A9A5 /* NotificationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationPresenter.swift; sourceTree = "<group>"; };
+		56EF3F4D1E56D40A0099876E /* IntervalTimerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalTimerTests.swift; sourceTree = "<group>"; };
+		56EF3F4F1E56D44D0099876E /* IntervalTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalTimer.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		56E5D0A81E52BDF10038B262 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56E5D0B91E52BDF10038B262 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5629C5AB1E619F7A00B694D1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5629C5AC1E619F8A00B694D1 /* NSImage+.swift */,
+				56A27D411E654CAF0001D863 /* Extensions.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		563CA1F71E54173F006A9291 /* IntervalRepeater */ = {
+			isa = PBXGroup;
+			children = (
+				563CA1FA1E5417AC006A9291 /* IntervalRepeaterTests.swift */,
+				56EF3F4D1E56D40A0099876E /* IntervalTimerTests.swift */,
+			);
+			path = IntervalRepeater;
+			sourceTree = "<group>";
+		};
+		563CA1FC1E541810006A9291 /* IntervalRepeater */ = {
+			isa = PBXGroup;
+			children = (
+				563CA1FD1E541825006A9291 /* IntervalRepeater.swift */,
+				56EF3F4F1E56D44D0099876E /* IntervalTimer.swift */,
+			);
+			path = IntervalRepeater;
+			sourceTree = "<group>";
+		};
+		56789B8B1E61C8FA00083F1F /* StatusBar */ = {
+			isa = PBXGroup;
+			children = (
+				566EC9F71E5DEA1E00702A2B /* Configurator.swift */,
+				5603969B1E5E160400F457FD /* StatusBarManager.swift */,
+				56789B8F1E61C98700083F1F /* RepeaterEventListener.swift */,
+				56789B931E61EC3600083F1F /* ImageGenerator.swift */,
+			);
+			name = StatusBar;
+			sourceTree = "<group>";
+		};
+		56789B8C1E61C91400083F1F /* StatusBar */ = {
+			isa = PBXGroup;
+			children = (
+				56789B8D1E61C95100083F1F /* RepeaterEventListenerTests.swift */,
+				56789B911E61EC0300083F1F /* ImageGeneratorTests.swift */,
+				566EC9F51E5DE9BC00702A2B /* AppConfiguratorTests.swift */,
+				560396991E5E08F600F457FD /* StatusBarManagerTests.swift */,
+			);
+			name = StatusBar;
+			sourceTree = "<group>";
+		};
+		567BEEBA1E66A03400C23190 /* CreateModalViewController */ = {
+			isa = PBXGroup;
+			children = (
+				567BEEBB1E66A04F00C23190 /* ModalControllerTests.swift */,
+			);
+			path = CreateModalViewController;
+			sourceTree = "<group>";
+		};
+		56C33F5E1E668C690019463A /* CreateModalViewController */ = {
+			isa = PBXGroup;
+			children = (
+				56C33F631E668DDC0019463A /* ModalController.swift */,
+				56C33F641E668DDC0019463A /* ModalController.xib */,
+			);
+			path = CreateModalViewController;
+			sourceTree = "<group>";
+		};
+		56E5D0A21E52BDF10038B262 = {
+			isa = PBXGroup;
+			children = (
+				56E5D0AD1E52BDF10038B262 /* IntervalReminder */,
+				56E5D0BF1E52BDF10038B262 /* IntervalReminderTests */,
+				56E5D0AC1E52BDF10038B262 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		56E5D0AC1E52BDF10038B262 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				56E5D0AB1E52BDF10038B262 /* IntervalReminder.app */,
+				56E5D0BC1E52BDF10038B262 /* IntervalReminderTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		56E5D0AD1E52BDF10038B262 /* IntervalReminder */ = {
+			isa = PBXGroup;
+			children = (
+				56E5D0CD1E52C7560038B262 /* Interval */,
+				563CA1FC1E541810006A9291 /* IntervalRepeater */,
+				5629C5AB1E619F7A00B694D1 /* Common */,
+				56789B8B1E61C8FA00083F1F /* StatusBar */,
+				56E5D0B01E52BDF10038B262 /* IntervalsViewController.swift */,
+				56529D471E6920F80059B666 /* IntervalTableView.swift */,
+				56A27D3B1E653DB30001D863 /* IntervalPresenter.swift */,
+				56A27D3F1E6546BF0001D863 /* IntervalInteractor.swift */,
+				56EB60761E6E6D420051A9A5 /* NotificationPresenter.swift */,
+				56C33F5E1E668C690019463A /* CreateModalViewController */,
+				56E5D0AE1E52BDF10038B262 /* AppDelegate.swift */,
+				56A27D351E6514820001D863 /* ViewControllerFactory.swift */,
+				56E5D0B21E52BDF10038B262 /* Assets.xcassets */,
+				56E5D0B41E52BDF10038B262 /* Main.storyboard */,
+				56E5D0B71E52BDF10038B262 /* Info.plist */,
+			);
+			path = IntervalReminder;
+			sourceTree = "<group>";
+		};
+		56E5D0BF1E52BDF10038B262 /* IntervalReminderTests */ = {
+			isa = PBXGroup;
+			children = (
+				56D42CB61E6D2B6200658B48 /* Common.swift */,
+				56E5D0D01E52CCB00038B262 /* Interval */,
+				563CA1F71E54173F006A9291 /* IntervalRepeater */,
+				56789B8C1E61C91400083F1F /* StatusBar */,
+				56A27D331E6512110001D863 /* IntervalsViewControllerTests.swift */,
+				56529D491E69258F0059B666 /* IntervalTableViewTests.swift */,
+				56A27D391E653D4B0001D863 /* IntervalPresenterTests.swift */,
+				56A27D3D1E6546940001D863 /* IntervalInteractorTests.swift */,
+				56EB60741E6E6CFC0051A9A5 /* NotificationPresenterTests.swift */,
+				567BEEBA1E66A03400C23190 /* CreateModalViewController */,
+				566EC9F31E5DE8FD00702A2B /* AppDelegateTests.swift */,
+				56A27D371E6515610001D863 /* ViewControllerFactoryTests.swift */,
+				56E5D0C21E52BDF10038B262 /* Info.plist */,
+			);
+			path = IntervalReminderTests;
+			sourceTree = "<group>";
+		};
+		56E5D0CD1E52C7560038B262 /* Interval */ = {
+			isa = PBXGroup;
+			children = (
+				56E5D0CE1E52C75E0038B262 /* Interval.swift */,
+				56E5D0D51E52CE940038B262 /* IntervalContainer.swift */,
+			);
+			path = Interval;
+			sourceTree = "<group>";
+		};
+		56E5D0D01E52CCB00038B262 /* Interval */ = {
+			isa = PBXGroup;
+			children = (
+				56E5D0D11E52CCC50038B262 /* IntervalTests.swift */,
+				56E5D0D31E52CD2B0038B262 /* IntervalContainerTests.swift */,
+			);
+			path = Interval;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		56E5D0AA1E52BDF10038B262 /* IntervalReminder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56E5D0C51E52BDF10038B262 /* Build configuration list for PBXNativeTarget "IntervalReminder" */;
+			buildPhases = (
+				56E5D0A71E52BDF10038B262 /* Sources */,
+				56E5D0A81E52BDF10038B262 /* Frameworks */,
+				56E5D0A91E52BDF10038B262 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IntervalReminder;
+			productName = IntervalReminder;
+			productReference = 56E5D0AB1E52BDF10038B262 /* IntervalReminder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		56E5D0BB1E52BDF10038B262 /* IntervalReminderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56E5D0C81E52BDF10038B262 /* Build configuration list for PBXNativeTarget "IntervalReminderTests" */;
+			buildPhases = (
+				56E5D0B81E52BDF10038B262 /* Sources */,
+				56E5D0B91E52BDF10038B262 /* Frameworks */,
+				56E5D0BA1E52BDF10038B262 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				56E5D0BE1E52BDF10038B262 /* PBXTargetDependency */,
+			);
+			name = IntervalReminderTests;
+			productName = IntervalReminderTests;
+			productReference = 56E5D0BC1E52BDF10038B262 /* IntervalReminderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		56E5D0A31E52BDF10038B262 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Azamat Valitov";
+				TargetAttributes = {
+					56E5D0AA1E52BDF10038B262 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					56E5D0BB1E52BDF10038B262 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 56E5D0AA1E52BDF10038B262;
+					};
+				};
+			};
+			buildConfigurationList = 56E5D0A61E52BDF10038B262 /* Build configuration list for PBXProject "IntervalReminder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 56E5D0A21E52BDF10038B262;
+			productRefGroup = 56E5D0AC1E52BDF10038B262 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				56E5D0AA1E52BDF10038B262 /* IntervalReminder */,
+				56E5D0BB1E52BDF10038B262 /* IntervalReminderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		56E5D0A91E52BDF10038B262 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56E5D0B31E52BDF10038B262 /* Assets.xcassets in Resources */,
+				56C33F661E668DDC0019463A /* ModalController.xib in Resources */,
+				56E5D0B61E52BDF10038B262 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56E5D0BA1E52BDF10038B262 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		56E5D0A71E52BDF10038B262 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56E5D0B11E52BDF10038B262 /* IntervalsViewController.swift in Sources */,
+				56C33F651E668DDC0019463A /* ModalController.swift in Sources */,
+				56E5D0AF1E52BDF10038B262 /* AppDelegate.swift in Sources */,
+				56789B901E61C98700083F1F /* RepeaterEventListener.swift in Sources */,
+				56A27D421E654CAF0001D863 /* Extensions.swift in Sources */,
+				56EB60771E6E6D420051A9A5 /* NotificationPresenter.swift in Sources */,
+				56E5D0D61E52CE940038B262 /* IntervalContainer.swift in Sources */,
+				56789B941E61EC3600083F1F /* ImageGenerator.swift in Sources */,
+				56A27D3C1E653DB30001D863 /* IntervalPresenter.swift in Sources */,
+				56529D481E6920F80059B666 /* IntervalTableView.swift in Sources */,
+				56EF3F501E56D44D0099876E /* IntervalTimer.swift in Sources */,
+				566EC9F81E5DEA1E00702A2B /* Configurator.swift in Sources */,
+				5603969C1E5E160400F457FD /* StatusBarManager.swift in Sources */,
+				5629C5AD1E619F8A00B694D1 /* NSImage+.swift in Sources */,
+				56A27D361E6514820001D863 /* ViewControllerFactory.swift in Sources */,
+				56A27D401E6546BF0001D863 /* IntervalInteractor.swift in Sources */,
+				56E5D0CF1E52C75E0038B262 /* Interval.swift in Sources */,
+				563CA1FE1E541825006A9291 /* IntervalRepeater.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56E5D0B81E52BDF10038B262 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56D42CB71E6D2B6200658B48 /* Common.swift in Sources */,
+				56E5D0D21E52CCC50038B262 /* IntervalTests.swift in Sources */,
+				566EC9F41E5DE8FD00702A2B /* AppDelegateTests.swift in Sources */,
+				56E5D0D41E52CD2B0038B262 /* IntervalContainerTests.swift in Sources */,
+				56A27D341E6512110001D863 /* IntervalsViewControllerTests.swift in Sources */,
+				56529D4A1E69258F0059B666 /* IntervalTableViewTests.swift in Sources */,
+				56EF3F4E1E56D40A0099876E /* IntervalTimerTests.swift in Sources */,
+				56789B921E61EC0300083F1F /* ImageGeneratorTests.swift in Sources */,
+				56789B8E1E61C95100083F1F /* RepeaterEventListenerTests.swift in Sources */,
+				56A27D3A1E653D4B0001D863 /* IntervalPresenterTests.swift in Sources */,
+				56EB60751E6E6CFC0051A9A5 /* NotificationPresenterTests.swift in Sources */,
+				56A27D381E6515610001D863 /* ViewControllerFactoryTests.swift in Sources */,
+				566EC9F61E5DE9BC00702A2B /* AppConfiguratorTests.swift in Sources */,
+				563CA1FB1E5417AC006A9291 /* IntervalRepeaterTests.swift in Sources */,
+				567BEEBC1E66A04F00C23190 /* ModalControllerTests.swift in Sources */,
+				56A27D3E1E6546940001D863 /* IntervalInteractorTests.swift in Sources */,
+				5603969A1E5E08F600F457FD /* StatusBarManagerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		56E5D0BE1E52BDF10038B262 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56E5D0AA1E52BDF10038B262 /* IntervalReminder */;
+			targetProxy = 56E5D0BD1E52BDF10038B262 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		56E5D0B41E52BDF10038B262 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				56E5D0B51E52BDF10038B262 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		56E5D0C31E52BDF10038B262 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		56E5D0C41E52BDF10038B262 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		56E5D0C61E52BDF10038B262 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = IntervalReminder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AVIR.IntervalReminder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		56E5D0C71E52BDF10038B262 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = IntervalReminder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AVIR.IntervalReminder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		56E5D0C91E52BDF10038B262 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = IntervalReminderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AVIR.IntervalReminderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IntervalReminder.app/Contents/MacOS/IntervalReminder";
+			};
+			name = Debug;
+		};
+		56E5D0CA1E52BDF10038B262 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = IntervalReminderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AVIR.IntervalReminderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IntervalReminder.app/Contents/MacOS/IntervalReminder";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		56E5D0A61E52BDF10038B262 /* Build configuration list for PBXProject "IntervalReminder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56E5D0C31E52BDF10038B262 /* Debug */,
+				56E5D0C41E52BDF10038B262 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56E5D0C51E52BDF10038B262 /* Build configuration list for PBXNativeTarget "IntervalReminder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56E5D0C61E52BDF10038B262 /* Debug */,
+				56E5D0C71E52BDF10038B262 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56E5D0C81E52BDF10038B262 /* Build configuration list for PBXNativeTarget "IntervalReminderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56E5D0C91E52BDF10038B262 /* Debug */,
+				56E5D0CA1E52BDF10038B262 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 56E5D0A31E52BDF10038B262 /* Project object */;
+}
