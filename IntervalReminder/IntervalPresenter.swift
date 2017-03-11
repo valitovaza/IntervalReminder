@@ -32,9 +32,13 @@ class IntervalPresenter: IntervalPresenterProtocol, IntervalsChangePresenter {
     weak var dataProvider: IntervalDataProvider?
     weak var view: IntervalsViewProtocol?
     var notificationCenter: NotificationCenterable!
+    var workspaceNotificationCenter: NotificationCenterable!
     
-    init(_ view: IntervalsViewProtocol, _ notificationCenter: NotificationCenterable = NotificationCenter.default) {
+    init(_ view: IntervalsViewProtocol,
+         _ notificationCenter: NotificationCenterable = NotificationCenter.default,
+         _ workspaceNotificationCenter: NotificationCenterable = NSWorkspace.shared().notificationCenter) {
         self.notificationCenter = notificationCenter
+        self.workspaceNotificationCenter = workspaceNotificationCenter
         self.view = view
         addObservers()
     }
@@ -42,24 +46,35 @@ class IntervalPresenter: IntervalPresenterProtocol, IntervalsChangePresenter {
         for observer in observers {
             notificationCenter.removeObserver(observer)
         }
+        for observer in workspaceObservers {
+            workspaceNotificationCenter.removeObserver(observer)
+        }
     }
     private var observers: [NSObjectProtocol] = []
+    private var workspaceObservers: [NSObjectProtocol] = []
     private func addObservers() {
         addObserver(Notification.Name.IntervalReminderNotifications.StartFromStatusbar.name)
         addObserver(Notification.Name.IntervalReminderNotifications.PauseFromStatusbar.name)
         addObserver(Notification.Name.IntervalReminderNotifications.ResumeFromStatusbar.name)
         addObserver(Notification.Name.IntervalReminderNotifications.StopFromStatusbar.name)
         addObserver(Notification.Name.IntervalReminderNotifications.DeleteFromMenu.name)
+        addWorkspaceObserver(NSNotification.Name.NSWorkspaceWillSleep)
+    }
+    private func addWorkspaceObserver(_ name: Notification.Name){
+        workspaceObservers.append(addHandler(workspaceNotificationCenter, name))
     }
     private func addObserver(_ name: Notification.Name) {
-        let observer = notificationCenter.addObserver(forName: name,
+        observers.append(addHandler(notificationCenter, name))
+    }
+    private func addHandler(_ notificationCenter: NotificationCenterable,
+                            _ name: Notification.Name) -> NSObjectProtocol {
+        return notificationCenter.addObserver(forName: name,
                                                       object: nil,
                                                       queue: OperationQueue.main)
         {[weak self]notification in
             guard let strongSelf = self else {return}
             strongSelf.handleEvent(notification)
         }
-        observers.append(observer)
     }
     private func handleEvent(_ notification: Notification) {
         switch notification.name {
@@ -73,6 +88,8 @@ class IntervalPresenter: IntervalPresenterProtocol, IntervalsChangePresenter {
             dataProvider?.stop()
         case Notification.Name.IntervalReminderNotifications.DeleteFromMenu.name:
             delete(notification)
+        case NSNotification.Name.NSWorkspaceWillSleep:
+            dataProvider?.pause()
         default:
             break
         }

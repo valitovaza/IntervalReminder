@@ -12,6 +12,7 @@ class IntervalPresenterTests: XCTestCase {
     private var sut: IntervalPresenter!
     private var dataProvider: MockDataProvider!
     private var nc: MockNotificationCenter!
+    private var wnc: MockNotificationCenter!
     private var view: MockView!
     private var cell: NSTableCellView!
     private var textField: NSTextField!
@@ -24,7 +25,8 @@ class IntervalPresenterTests: XCTestCase {
     private func createVariables() {
         view = MockView()
         nc = MockNotificationCenter()
-        sut = IntervalPresenter(view, nc)
+        wnc = MockNotificationCenter()
+        sut = IntervalPresenter(view, nc, wnc)
         initDataProvider()
         initViews()
     }
@@ -175,6 +177,20 @@ class IntervalPresenterTests: XCTestCase {
         XCTAssertEqual(nc.lastNotification?.name, Notification.Name.IntervalReminderNotifications.IntervalResumed.name)
         XCTAssertEqual(nc.lastNotification!.userInfo![IntervalReminderKeys.reminderInterval.rawValue] as! Double, testInterval)
         XCTAssertEqual(nc.lastNotification!.userInfo![IntervalReminderKeys.reminderPastInterval.rawValue] as! Double, 0.1)
+    }
+    func testNSWorkspaceNotificationCenterSet() {
+        XCTAssertNotNil(sut.workspaceNotificationCenter)
+    }
+    func testWorspaceNotificationCenterObsersNSWorkspaceWillSleepNotification() {
+        XCTAssertEqual(wnc.mockNames[0], NSNotification.Name.NSWorkspaceWillSleep)
+    }
+    func testWorspaceObserversMustRemoveWhenDeinit() {
+        sut = nil
+        XCTAssertEqual(wnc.mockObservers.count, 0)
+    }
+    func testNSWorkspaceWillSleepNotificationMustLeadToPause() {
+        wnc.post(Notification(name: NSNotification.Name.NSWorkspaceWillSleep))
+        XCTAssertTrue(dataProvider.pauseGotInvoked)
     }
 }
 extension IntervalPresenterTests {

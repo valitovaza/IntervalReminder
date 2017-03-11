@@ -32,11 +32,22 @@ class NotificationPresenterTests: XCTestCase {
         XCTAssertEqual(deliverer.notification?.title, "IntervalReminder")
         XCTAssertEqual(deliverer.notification?.informativeText, timerText)
     }
+    func testDelivererDelegateSetBeforeDeliver() {
+        sut.presentNotification("")
+        XCTAssertNotNil(deliverer.delegateBeforeNotification)
+    }
+    func testShouldPresentNotificationReturnTrue() {
+        XCTAssertTrue(sut.userNotificationCenter(NSUserNotificationCenter.default,
+                                                 shouldPresent: NSUserNotification()))
+    }
 }
 extension NotificationPresenterTests {
     class MockDeliverer: NotificationDeliverer {
+        var delegate: NSUserNotificationCenterDelegate?
         var notification: NSUserNotification?
+        var delegateBeforeNotification: NSUserNotificationCenterDelegate?
         func deliver(_ notification: NSUserNotification) {
+            delegateBeforeNotification = self.delegate
             self.notification = notification
         }
     }

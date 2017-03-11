@@ -129,6 +129,7 @@ class IntervalInteractorTests: XCTestCase {
     }
     func testIntervalActionMustInvokeStartIfNotInProgressNotPaused() {
         sut.repeater.intervalContainer.add(testInterval)
+        repeater.inProgress = false
         sut.intervalAction()
         XCTAssertTrue(repeater.startGotInvoked)
         XCTAssertEqual(presenter.mockTitle, ButtonTitles.Pause.rawValue)
@@ -300,6 +301,7 @@ class IntervalInteractorTests: XCTestCase {
         tickPauseTickResumeTickPauseTick()
         sut.intervalDidEnd(text: "", at: 0)
         repeater.currentStartTime = timerProvider.time
+        sut.resume()
         tickPauseTick()
         XCTAssertEqual(sut.elapsedInterval(forRow: 0), testTick)
     }
@@ -307,6 +309,7 @@ class IntervalInteractorTests: XCTestCase {
         tickPauseTickResumeTickPauseTick()
         sut.progressChanged(true)
         repeater.currentStartTime = timerProvider.time
+        sut.resume()
         tickPauseTick()
         XCTAssertEqual(sut.elapsedInterval(forRow: 0), testTick)
     }
@@ -373,6 +376,18 @@ class IntervalInteractorTests: XCTestCase {
         sut.intervalDidEnd(text: timerText , at: 0)
         XCTAssertEqual(np.nTitle, timerText)
     }
+    func testPauseMustNotWorkIfAlreadyPaused() {
+        sut.pause()
+        XCTAssertTrue(presenter.intervalStoppedGotInvoked)
+        presenter.intervalStoppedGotInvoked = false
+        sut.pause()
+        XCTAssertFalse(presenter.intervalStoppedGotInvoked)
+    }
+    func testPauseMustNotWorkIfNotInprogress() {
+        repeater.inProgress = false
+        sut.pause()
+        XCTAssertFalse(presenter.intervalStoppedGotInvoked)
+    }
 }
 extension IntervalInteractorTests {
     class MockNotificationPresenter: NotificationPresenterProtocol {
@@ -434,7 +449,7 @@ extension IntervalInteractorTests {
         private(set) var intervalContainer: IntervalContainer!
         var currentStartTime: Double = 34.0
         var repeatIntervals = false
-        var inProgress: Bool = false
+        var inProgress: Bool = true
         var startGotInvoked = false
         var currentIndex: Int = 100
         func start() {

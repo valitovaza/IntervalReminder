@@ -96,8 +96,13 @@ class IntervalInteractor: IntervalInteractorProtocol, IntervalDataProvider {
         }
     }
     func pause() {
-        pastInterval += timeProvider.currentTime() - repeater.currentStartTime
+        if !paused && self.repeater.inProgress {
+            pauseImp()
+        }
+    }
+    private func pauseImp() {
         paused = true
+        pastInterval += timeProvider.currentTime() - repeater.currentStartTime
         repeater.pause()
         pausePresenter()
     }

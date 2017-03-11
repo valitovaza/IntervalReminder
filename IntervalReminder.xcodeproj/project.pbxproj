@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5603026F1E710AEC00C99EBB /* Notification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5603026E1E710AEC00C99EBB /* Notification+.swift */; };
 		5603969A1E5E08F600F457FD /* StatusBarManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560396991E5E08F600F457FD /* StatusBarManagerTests.swift */; };
 		5603969C1E5E160400F457FD /* StatusBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5603969B1E5E160400F457FD /* StatusBarManager.swift */; };
 		5629C5AD1E619F8A00B694D1 /* NSImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5629C5AC1E619F8A00B694D1 /* NSImage+.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5603026E1E710AEC00C99EBB /* Notification+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Notification+.swift"; sourceTree = "<group>"; };
 		560396991E5E08F600F457FD /* StatusBarManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarManagerTests.swift; sourceTree = "<group>"; };
 		5603969B1E5E160400F457FD /* StatusBarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarManager.swift; sourceTree = "<group>"; };
 		5629C5AC1E619F8A00B694D1 /* NSImage+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSImage+.swift"; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			children = (
 				5629C5AC1E619F8A00B694D1 /* NSImage+.swift */,
 				56A27D411E654CAF0001D863 /* Extensions.swift */,
+				5603026E1E710AEC00C99EBB /* Notification+.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				56A27D361E6514820001D863 /* ViewControllerFactory.swift in Sources */,
 				56A27D401E6546BF0001D863 /* IntervalInteractor.swift in Sources */,
 				56E5D0CF1E52C75E0038B262 /* Interval.swift in Sources */,
+				5603026F1E710AEC00C99EBB /* Notification+.swift in Sources */,
 				563CA1FE1E541825006A9291 /* IntervalRepeater.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
