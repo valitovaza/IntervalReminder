@@ -15,7 +15,11 @@ class IntervalsViewController: NSViewController, IntervalsViewProtocol {
     var interactor: IntervalInteractorProtocol?
     var mainWindowContainer: MainWindowContainer = NSApp
     
-    override func awakeFromNib() {
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        configureInteractorAndPresenter()
+    }
+    private func configureInteractorAndPresenter() {
         let intervalPresenter = IntervalPresenter(self)
         let intervalInteractor = IntervalInteractor(intervalPresenter)
         intervalPresenter.dataProvider = intervalInteractor
@@ -25,6 +29,11 @@ class IntervalsViewController: NSViewController, IntervalsViewProtocol {
                      andPresenter intervalPresenter: IntervalPresenterProtocol) {
         presenter = intervalPresenter
         interactor = intervalInteractor
+    }
+    
+    // MARK: - Lyfecycle
+    override func viewDidLoad() {
+        interactor?.fetch()
     }
     
     // MARK: - Actions
@@ -61,6 +70,9 @@ class IntervalsViewController: NSViewController, IntervalsViewProtocol {
         tableView.reloadData()
     }
     func updateRow(at index: Int) {
+        tableView.reloadData()
+    }
+    func reload() {
         tableView.reloadData()
     }
 }

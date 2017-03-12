@@ -8,6 +8,7 @@ class IntervalsViewControllerTests: XCTestCase {
     private var sut: IntervalsViewController!
     private var presenter: MockIntervalPresenter!
     private var intervalPresenter: IntervalPresenter!
+    private var interactor: MockInteractor!
     
     // MARK: - Set up and tear down
     override func setUp() {
@@ -21,8 +22,13 @@ class IntervalsViewControllerTests: XCTestCase {
         sut.mainWindowContainer = MockMainWindowContainer()
     }
     private func initViewController() {
-        sut = ViewControllersFactory.instantiateViewController(inStoryboard: .main) as IntervalsViewController
+        sut = loadVc()
+        interactor = getInteractor()
+        sut.interactor = interactor
         _ = sut.view
+    }
+    private func loadVc() -> IntervalsViewController {
+        return ViewControllersFactory.instantiateViewController(inStoryboard: .main) as IntervalsViewController
     }
     private func initPresenter() {
         intervalPresenter = sut.presenter as? IntervalPresenter
@@ -59,9 +65,6 @@ class IntervalsViewControllerTests: XCTestCase {
     func testStopButtonsInitialStateIsDisabled() {
         XCTAssertFalse(sut.stopButton.isEnabled)
     }
-    func testIntervalButtonInitialStateIsDisabled() {
-        XCTAssertFalse(sut.intervalButton.isEnabled)
-    }
     func testPresenterInitialized() {
         XCTAssertNotNil(sut.presenter)
     }
@@ -77,7 +80,8 @@ class IntervalsViewControllerTests: XCTestCase {
         XCTAssertNotNil(sut.interactor)
     }
     func testPresentersDataProviderInitialized() {
-        XCTAssertNotNil(intervalPresenter.dataProvider)
+        let sut = loadVc()
+        XCTAssertNotNil((sut.presenter as! IntervalPresenter).dataProvider)
     }
     func testAddRowAtIndexPathMustInsertTableViewRow() {
         let table = mockTableView()
@@ -118,16 +122,14 @@ class IntervalsViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.stopButton.action, #selector(sut.stop(_:)))
     }
     func testIntervalActionMustInvokeInteractor() {
-        let mockInteractor = interactor()
         sut.intervalAction(NSButton())
-        XCTAssertTrue(mockInteractor.intervalActionGotInvoked)
+        XCTAssertTrue(interactor.intervalActionGotInvoked)
     }
     func testStopMustInvokeInteractorsStop() {
-        let mockInteractor = interactor()
         sut.stop(NSButton())
-        XCTAssertTrue(mockInteractor.stopGotInvoked)
+        XCTAssertTrue(interactor.stopGotInvoked)
     }
-    private func interactor() -> MockInteractor {
+    private func getInteractor() -> MockInteractor {
         let mockInteractor = MockInteractor()
         sut.interactor = mockInteractor
         return mockInteractor
@@ -143,9 +145,17 @@ class IntervalsViewControllerTests: XCTestCase {
         return mock
     }
     func testChangeRepeatMustInvokeInteractor() {
-        let mockInteractor = interactor()
         sut.changeRepeat(NSButton())
-        XCTAssertTrue(mockInteractor.changeRepeatGotInvoked)
+        XCTAssertTrue(interactor.changeRepeatGotInvoked)
+    }
+    func testReloadMustInvokeTableReload() {
+        let table = mockTableView()
+        sut.reload()
+        XCTAssertTrue(table.reloadDataGotInvoked)
+    }
+    func testViewDidLoadMustCallFetch() {
+        sut.viewDidLoad()
+        XCTAssertTrue(interactor.fetchWasCalled)
     }
 }
 extension IntervalsViewControllerTests {
@@ -163,6 +173,10 @@ extension IntervalsViewControllerTests {
             stopGotInvoked = true
         }
         func create(interval: Double, withText text: String) {}
+        var fetchWasCalled = false
+        func fetch() {
+            fetchWasCalled = true
+        }
     }
     class MockTableView: NSTableView {
         var reloadDataGotInvoked = false
@@ -171,8 +185,9 @@ extension IntervalsViewControllerTests {
         }
     }
     class MockIntervalPresenter: IntervalPresenterProtocol {
+        var cnt = 456
         func count() -> Int {
-            return 456
+            return cnt
         }
         var tableViewCell: NSTableCellView!
         var atRow: Int = -103

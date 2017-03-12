@@ -148,6 +148,7 @@ extension ModalControllerTests {
         func intervalAction() {}
         func changeRepeat() {}
         func stop() {}
+        func fetch() {}
     }
     class MockSheetChild: SheetChildWindow {
         var sheetParent: NSWindow? = MockWindow()

@@ -181,7 +181,7 @@ class IntervalPresenterTests: XCTestCase {
     func testNSWorkspaceNotificationCenterSet() {
         XCTAssertNotNil(sut.workspaceNotificationCenter)
     }
-    func testWorspaceNotificationCenterObsersNSWorkspaceWillSleepNotification() {
+    func testWorspaceNotificationCenterObservesNSWorkspaceWillSleepNotification() {
         XCTAssertEqual(wnc.mockNames[0], NSNotification.Name.NSWorkspaceWillSleep)
     }
     func testWorspaceObserversMustRemoveWhenDeinit() {
@@ -191,6 +191,35 @@ class IntervalPresenterTests: XCTestCase {
     func testNSWorkspaceWillSleepNotificationMustLeadToPause() {
         wnc.post(Notification(name: NSNotification.Name.NSWorkspaceWillSleep))
         XCTAssertTrue(dataProvider.pauseGotInvoked)
+    }
+    func testReloadMustInvokeViewsReload() {
+        let btn = intervalButton()
+        btn.isEnabled = false
+        dataProvider.cnt = 0
+        sut.reload()
+        XCTAssertTrue(view.reloadWasCalled)
+        XCTAssertFalse(btn.isEnabled)
+    }
+    func testReloadMustEnableIntervalButtonIfCountGreaterThan0() {
+        let btn = intervalButton()
+        btn.isEnabled = false
+        dataProvider.cnt = 1
+        sut.reload()
+        XCTAssertTrue(btn.isEnabled)
+    }
+    func testReloadMustDisableIntervalButtonIfCountIs0() {
+        let btn = intervalButton()
+        btn.isEnabled = true
+        dataProvider.cnt = 0
+        sut.reload()
+        XCTAssertFalse(btn.isEnabled)
+    }
+    func testNotificationCenterObservesNSApplicationWillTerminate() {
+        XCTAssertTrue(nc.mockNames.contains(NSNotification.Name.NSApplicationWillTerminate))
+    }
+    func testNSApplicationWillTerminateMustInvokeSaveIntervals() {
+        nc.post(Notification(name: NSNotification.Name.NSApplicationWillTerminate))
+        XCTAssertTrue(dataProvider.saveIntervalsWasCalled)
     }
 }
 extension IntervalPresenterTests {
@@ -242,6 +271,10 @@ extension IntervalPresenterTests {
         func updateRow(at index: Int) {
             updateIndex = index
         }
+        var reloadWasCalled = false
+        func reload() {
+            reloadWasCalled = true
+        }
     }
     class MockDataProvider: IntervalDataProvider {
         // MARK: - Parameters & Constants
@@ -253,8 +286,9 @@ extension IntervalPresenterTests {
         var currentIndex = 10
         
         //MARK: - IntervalDataProvider
+        var cnt = 45
         func count() -> Int {
-            return 45
+            return cnt
         }
         func elapsedInterval(forRow row: Int) -> Double {
             return 4.0
@@ -284,6 +318,10 @@ extension IntervalPresenterTests {
         var stopGotInvoked = false
         func stop() {
             stopGotInvoked = true
+        }
+        var saveIntervalsWasCalled = false
+        func saveIntervals() {
+            saveIntervalsWasCalled = true
         }
     }
 }

@@ -6,6 +6,7 @@ protocol IntervalInteractorProtocol: IntervalKeeperProtocol {
     func create(interval: Double, withText text: String)
     func changeRepeat()
     func intervalAction()
+    func fetch()
 }
 protocol IntervalsChangePresenter: class {
     func newInterval(at index: Int)
@@ -18,10 +19,12 @@ protocol IntervalsChangePresenter: class {
     func intervalStopped()
     func intervalEnded()
     func intervalResumed(elapsed: Double, interval: Double)
+    func reload()
 }
 class IntervalInteractor: IntervalInteractorProtocol, IntervalDataProvider {
     fileprivate weak var presenter: IntervalsChangePresenter?
     var repeater: IntervalRepeaterProtocol!
+    var cache: Cache = CoreDataCache()
     
     private(set) var paused = false
     fileprivate var pastInterval: Double = 0.0
@@ -60,6 +63,21 @@ class IntervalInteractor: IntervalInteractorProtocol, IntervalDataProvider {
             resume()
         }else{
             pause()
+        }
+    }
+    func fetch() {
+        clearAllIntervals()
+        fillFromCache()
+        presenter?.reload()
+    }
+    private func clearAllIntervals() {
+        for index in (0..<count()).reversed() {
+            repeater.intervalContainer.remove(at: index)
+        }
+    }
+    private func fillFromCache() {
+        cache.getIntervals().reversed().forEach { (interval) in
+            repeater.intervalContainer.add(interval)
         }
     }
     
@@ -120,6 +138,16 @@ class IntervalInteractor: IntervalInteractorProtocol, IntervalDataProvider {
         if let interval = repeater.intervalContainer.interval(at: currentIndex) {
             presenter?.intervalResumed(elapsed: pastInterval,interval: interval.timeInterval)
         }
+    }
+    func saveIntervals() {
+        cache.saveIntervals(allIntervals())
+    }
+    private func allIntervals() -> [Interval] {
+        var intervals: [Interval] = []
+        for index in 0..<count() {
+            intervals.append(repeater.intervalContainer.interval(at: index)!)
+        }
+        return intervals
     }
     
     // MARK: - IntervalKeeperProtocol

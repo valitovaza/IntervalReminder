@@ -13,6 +13,7 @@ protocol IntervalDataProvider: class, IntervalKeeperProtocol {
     func pause()
     func resume()
     var currentIndex: Int {get}
+    func saveIntervals()
 }
 
 protocol IntervalsViewProtocol: class {
@@ -22,6 +23,7 @@ protocol IntervalsViewProtocol: class {
     func addRow(at index: Int)
     func removeRow(at index: Int)
     func updateRow(at index: Int)
+    func reload()
 }
 enum ButtonTitles: String {
     case Start
@@ -58,6 +60,7 @@ class IntervalPresenter: IntervalPresenterProtocol, IntervalsChangePresenter {
         addObserver(Notification.Name.IntervalReminderNotifications.ResumeFromStatusbar.name)
         addObserver(Notification.Name.IntervalReminderNotifications.StopFromStatusbar.name)
         addObserver(Notification.Name.IntervalReminderNotifications.DeleteFromMenu.name)
+        addObserver(NSNotification.Name.NSApplicationWillTerminate)
         addWorkspaceObserver(NSNotification.Name.NSWorkspaceWillSleep)
     }
     private func addWorkspaceObserver(_ name: Notification.Name){
@@ -90,6 +93,8 @@ class IntervalPresenter: IntervalPresenterProtocol, IntervalsChangePresenter {
             delete(notification)
         case NSNotification.Name.NSWorkspaceWillSleep:
             dataProvider?.pause()
+        case NSNotification.Name.NSApplicationWillTerminate:
+            dataProvider?.saveIntervals()
         default:
             break
         }
@@ -182,5 +187,17 @@ class IntervalPresenter: IntervalPresenterProtocol, IntervalsChangePresenter {
     private func info(elapsed: Double, interval: Double) -> [String: Any] {
         return [IntervalReminderKeys.reminderInterval.rawValue: interval,
                 IntervalReminderKeys.reminderPastInterval.rawValue: elapsed]
+    }
+    func reload() {
+        view?.reload()
+        configureIntervalButton()
+    }
+    private func configureIntervalButton() {
+        if let dataProvider = dataProvider,
+            dataProvider.count() > 0 {
+            enableIntervalButton()
+        }else{
+            disableIntervalButton()
+        }
     }
 }

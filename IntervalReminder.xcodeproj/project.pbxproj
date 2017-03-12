@@ -10,7 +10,6 @@
 		5603026F1E710AEC00C99EBB /* Notification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5603026E1E710AEC00C99EBB /* Notification+.swift */; };
 		5603969A1E5E08F600F457FD /* StatusBarManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560396991E5E08F600F457FD /* StatusBarManagerTests.swift */; };
 		5603969C1E5E160400F457FD /* StatusBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5603969B1E5E160400F457FD /* StatusBarManager.swift */; };
-		5629C5AD1E619F8A00B694D1 /* NSImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5629C5AC1E619F8A00B694D1 /* NSImage+.swift */; };
 		563CA1FB1E5417AC006A9291 /* IntervalRepeaterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563CA1FA1E5417AC006A9291 /* IntervalRepeaterTests.swift */; };
 		563CA1FE1E541825006A9291 /* IntervalRepeater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563CA1FD1E541825006A9291 /* IntervalRepeater.swift */; };
 		56529D481E6920F80059B666 /* IntervalTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56529D471E6920F80059B666 /* IntervalTableView.swift */; };
@@ -23,6 +22,7 @@
 		56789B921E61EC0300083F1F /* ImageGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56789B911E61EC0300083F1F /* ImageGeneratorTests.swift */; };
 		56789B941E61EC3600083F1F /* ImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56789B931E61EC3600083F1F /* ImageGenerator.swift */; };
 		567BEEBC1E66A04F00C23190 /* ModalControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567BEEBB1E66A04F00C23190 /* ModalControllerTests.swift */; };
+		567DD1C91E750A7D00321C92 /* Intervals.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 567DD1C71E750A7D00321C92 /* Intervals.xcdatamodeld */; };
 		56A27D341E6512110001D863 /* IntervalsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A27D331E6512110001D863 /* IntervalsViewControllerTests.swift */; };
 		56A27D361E6514820001D863 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A27D351E6514820001D863 /* ViewControllerFactory.swift */; };
 		56A27D381E6515610001D863 /* ViewControllerFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A27D371E6515610001D863 /* ViewControllerFactoryTests.swift */; };
@@ -33,6 +33,8 @@
 		56A27D421E654CAF0001D863 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A27D411E654CAF0001D863 /* Extensions.swift */; };
 		56C33F651E668DDC0019463A /* ModalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C33F631E668DDC0019463A /* ModalController.swift */; };
 		56C33F661E668DDC0019463A /* ModalController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56C33F641E668DDC0019463A /* ModalController.xib */; };
+		56CE22961E7464D6008AD2DB /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE22951E7464D6008AD2DB /* Cache.swift */; };
+		56CE22981E7465A9008AD2DB /* CoreDataCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE22971E7465A9008AD2DB /* CoreDataCacheTests.swift */; };
 		56D42CB71E6D2B6200658B48 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D42CB61E6D2B6200658B48 /* Common.swift */; };
 		56E5D0AF1E52BDF10038B262 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E5D0AE1E52BDF10038B262 /* AppDelegate.swift */; };
 		56E5D0B11E52BDF10038B262 /* IntervalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E5D0B01E52BDF10038B262 /* IntervalsViewController.swift */; };
@@ -62,7 +64,6 @@
 		5603026E1E710AEC00C99EBB /* Notification+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Notification+.swift"; sourceTree = "<group>"; };
 		560396991E5E08F600F457FD /* StatusBarManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarManagerTests.swift; sourceTree = "<group>"; };
 		5603969B1E5E160400F457FD /* StatusBarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarManager.swift; sourceTree = "<group>"; };
-		5629C5AC1E619F8A00B694D1 /* NSImage+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSImage+.swift"; sourceTree = "<group>"; };
 		563CA1FA1E5417AC006A9291 /* IntervalRepeaterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalRepeaterTests.swift; sourceTree = "<group>"; };
 		563CA1FD1E541825006A9291 /* IntervalRepeater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalRepeater.swift; sourceTree = "<group>"; };
 		56529D471E6920F80059B666 /* IntervalTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalTableView.swift; sourceTree = "<group>"; };
@@ -75,6 +76,7 @@
 		56789B911E61EC0300083F1F /* ImageGeneratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageGeneratorTests.swift; sourceTree = "<group>"; };
 		56789B931E61EC3600083F1F /* ImageGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageGenerator.swift; sourceTree = "<group>"; };
 		567BEEBB1E66A04F00C23190 /* ModalControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalControllerTests.swift; sourceTree = "<group>"; };
+		567DD1C81E750A7D00321C92 /* Intervals.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Intervals.xcdatamodel; sourceTree = "<group>"; };
 		56A27D331E6512110001D863 /* IntervalsViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalsViewControllerTests.swift; sourceTree = "<group>"; };
 		56A27D351E6514820001D863 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		56A27D371E6515610001D863 /* ViewControllerFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFactoryTests.swift; sourceTree = "<group>"; };
@@ -85,6 +87,8 @@
 		56A27D411E654CAF0001D863 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		56C33F631E668DDC0019463A /* ModalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalController.swift; sourceTree = "<group>"; };
 		56C33F641E668DDC0019463A /* ModalController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModalController.xib; sourceTree = "<group>"; };
+		56CE22951E7464D6008AD2DB /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		56CE22971E7465A9008AD2DB /* CoreDataCacheTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataCacheTests.swift; sourceTree = "<group>"; };
 		56D42CB61E6D2B6200658B48 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		56E5D0AB1E52BDF10038B262 /* IntervalReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntervalReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56E5D0AE1E52BDF10038B262 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,7 +129,6 @@
 		5629C5AB1E619F7A00B694D1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				5629C5AC1E619F8A00B694D1 /* NSImage+.swift */,
 				56A27D411E654CAF0001D863 /* Extensions.swift */,
 				5603026E1E710AEC00C99EBB /* Notification+.swift */,
 			);
@@ -189,6 +192,23 @@
 			path = CreateModalViewController;
 			sourceTree = "<group>";
 		};
+		56CE22931E7464A2008AD2DB /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				56CE22951E7464D6008AD2DB /* Cache.swift */,
+				567DD1C71E750A7D00321C92 /* Intervals.xcdatamodeld */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		56CE22941E7464B8008AD2DB /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				56CE22971E7465A9008AD2DB /* CoreDataCacheTests.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
 		56E5D0A21E52BDF10038B262 = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +234,7 @@
 				563CA1FC1E541810006A9291 /* IntervalRepeater */,
 				5629C5AB1E619F7A00B694D1 /* Common */,
 				56789B8B1E61C8FA00083F1F /* StatusBar */,
+				56CE22931E7464A2008AD2DB /* Cache */,
 				56E5D0B01E52BDF10038B262 /* IntervalsViewController.swift */,
 				56529D471E6920F80059B666 /* IntervalTableView.swift */,
 				56A27D3B1E653DB30001D863 /* IntervalPresenter.swift */,
@@ -236,6 +257,7 @@
 				56E5D0D01E52CCB00038B262 /* Interval */,
 				563CA1F71E54173F006A9291 /* IntervalRepeater */,
 				56789B8C1E61C91400083F1F /* StatusBar */,
+				56CE22941E7464B8008AD2DB /* Cache */,
 				56A27D331E6512110001D863 /* IntervalsViewControllerTests.swift */,
 				56529D491E69258F0059B666 /* IntervalTableViewTests.swift */,
 				56A27D391E653D4B0001D863 /* IntervalPresenterTests.swift */,
@@ -376,6 +398,7 @@
 				56789B901E61C98700083F1F /* RepeaterEventListener.swift in Sources */,
 				56A27D421E654CAF0001D863 /* Extensions.swift in Sources */,
 				56EB60771E6E6D420051A9A5 /* NotificationPresenter.swift in Sources */,
+				56CE22961E7464D6008AD2DB /* Cache.swift in Sources */,
 				56E5D0D61E52CE940038B262 /* IntervalContainer.swift in Sources */,
 				56789B941E61EC3600083F1F /* ImageGenerator.swift in Sources */,
 				56A27D3C1E653DB30001D863 /* IntervalPresenter.swift in Sources */,
@@ -383,7 +406,7 @@
 				56EF3F501E56D44D0099876E /* IntervalTimer.swift in Sources */,
 				566EC9F81E5DEA1E00702A2B /* Configurator.swift in Sources */,
 				5603969C1E5E160400F457FD /* StatusBarManager.swift in Sources */,
-				5629C5AD1E619F8A00B694D1 /* NSImage+.swift in Sources */,
+				567DD1C91E750A7D00321C92 /* Intervals.xcdatamodeld in Sources */,
 				56A27D361E6514820001D863 /* ViewControllerFactory.swift in Sources */,
 				56A27D401E6546BF0001D863 /* IntervalInteractor.swift in Sources */,
 				56E5D0CF1E52C75E0038B262 /* Interval.swift in Sources */,
@@ -411,6 +434,7 @@
 				566EC9F61E5DE9BC00702A2B /* AppConfiguratorTests.swift in Sources */,
 				563CA1FB1E5417AC006A9291 /* IntervalRepeaterTests.swift in Sources */,
 				567BEEBC1E66A04F00C23190 /* ModalControllerTests.swift in Sources */,
+				56CE22981E7465A9008AD2DB /* CoreDataCacheTests.swift in Sources */,
 				56A27D3E1E6546940001D863 /* IntervalInteractorTests.swift in Sources */,
 				5603969A1E5E08F600F457FD /* StatusBarManagerTests.swift in Sources */,
 			);
@@ -615,6 +639,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		567DD1C71E750A7D00321C92 /* Intervals.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				567DD1C81E750A7D00321C92 /* Intervals.xcdatamodel */,
+			);
+			currentVersion = 567DD1C81E750A7D00321C92 /* Intervals.xcdatamodel */;
+			path = Intervals.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 56E5D0A31E52BDF10038B262 /* Project object */;
 }

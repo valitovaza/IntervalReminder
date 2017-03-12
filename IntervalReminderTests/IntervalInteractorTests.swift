@@ -18,14 +18,20 @@ class IntervalInteractorTests: XCTestCase {
     private var repeater: MockRepeater!
     private var timer: MockImmediateTimer!
     private var timerProvider: MockTimeProvider!
+    private var cache: CacheMock!
     
     // MARK: - Set up and tear down
     override func setUp() {
         super.setUp()
         presenter = MockPresenter()
         sut = IntervalInteractor(presenter)
+        initCache()
         initFields()
         clearStatic()
+    }
+    private func initCache() {
+        cache = CacheMock()
+        sut.cache = cache
     }
     private func initFields() {
         initRepeater()
@@ -56,6 +62,7 @@ class IntervalInteractorTests: XCTestCase {
         repeater = nil
         timer = nil
         timerProvider = nil
+        cache = nil
         super.tearDown()
     }
     
@@ -388,8 +395,50 @@ class IntervalInteractorTests: XCTestCase {
         sut.pause()
         XCTAssertFalse(presenter.intervalStoppedGotInvoked)
     }
+    func testCacheIsSet() {
+        XCTAssertNotNil(sut.cache)
+    }
+    func testFetchMustGetIntervalsFromCache() {
+        cache.intervals = [testInterval, secondTestInterval]
+        sut.fetch()
+        XCTAssertEqual(sut.interval(forRow: 0), testInterval.timeInterval)
+        XCTAssertEqual(sut.title(forRow: 1), secondTestInterval.text)
+    }
+    func testFetchMustInvokeReload() {
+        sut.fetch()
+        XCTAssertTrue(presenter.reloadWasCalled)
+    }
+    func testFetchMustFillIntervalsFromCacheBeforeReload() {
+        cache.intervals = [testInterval]
+        presenter.reloadCallback = {[unowned self] in
+            XCTAssertEqual(self.sut.interval(forRow: 0), self.testInterval.timeInterval)
+        }
+        sut.fetch()
+    }
+    func testFetchMustClearContainerBeforeFetching() {
+        sut.create(interval: testTick, withText: timerText)
+        cache.intervals = [testInterval, secondTestInterval]
+        sut.fetch()
+        XCTAssertEqual(sut.count(), cache.intervals.count)
+    }
+    func testSaveIntervalsMustInvokeCacheSave() {
+        sut.repeater.intervalContainer.add(secondTestInterval)
+        sut.repeater.intervalContainer.add(testInterval)
+        sut.saveIntervals()
+        XCTAssertEqual(cache.savedIntervals[0].text, testInterval.text)
+    }
 }
 extension IntervalInteractorTests {
+    class CacheMock: Cache {
+        var savedIntervals: [Interval] = []
+        func saveIntervals(_ intervals: [Interval]) {
+            savedIntervals = intervals
+        }
+        var intervals: [Interval] = []
+        func getIntervals() -> [Interval] {
+            return intervals
+        }
+    }
     class MockNotificationPresenter: NotificationPresenterProtocol {
         var nTitle: String?
         func presentNotification(_ title: String) {
@@ -443,6 +492,12 @@ extension IntervalInteractorTests {
         func intervalResumed(elapsed: Double, interval: Double) {
             elapsedInterval = elapsed
             fullInterval = interval
+        }
+        var reloadWasCalled = false
+        var reloadCallback: (()->())?
+        func reload() {
+            reloadCallback?()
+            reloadWasCalled = true
         }
     }
     class MockRepeater: ContainerListener, IntervalRepeaterProtocol {
